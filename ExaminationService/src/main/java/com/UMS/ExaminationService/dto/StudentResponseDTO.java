@@ -1,4 +1,10 @@
 package com.UMS.ExaminationService.dto;
 
+import lombok.Data;
+
+@Data
 public class StudentResponseDTO {
+    private Long studentId;
+    private String firstName;
+    private String lastName;
 }
