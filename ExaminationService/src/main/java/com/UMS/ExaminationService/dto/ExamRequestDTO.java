@@ -1,4 +1,19 @@
 package com.UMS.ExaminationService.dto;
 
-public class ExaminationRequestDTO {
+import lombok.Data;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+@Data
+public class ExamRequestDTO {
+    private Long courseId;
+    private Long teacherId;
+    private String examType;
+    private LocalDate examDate;
+    private LocalTime startTime;
+    private LocalTime endTime;
+    private String roomNumber;
+    private Integer totalMarks;
+    private String status;
 }
