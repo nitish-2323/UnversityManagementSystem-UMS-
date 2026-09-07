@@ -1,4 +1,7 @@
 package com.UMS.ExaminationService.repository;
 
-public interface ResultRepository {
+import com.UMS.ExaminationService.entity.Result;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ResultRepository extends JpaRepository<Result,Long> {
 }
