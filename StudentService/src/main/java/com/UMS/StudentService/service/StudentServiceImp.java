@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 public class StudentServiceImp implements StudentService {
 
     private final StudentRepository repository;
-    private final RestTemplate restTemplate;
     private final StudentClient studentClient;
 
     @Override

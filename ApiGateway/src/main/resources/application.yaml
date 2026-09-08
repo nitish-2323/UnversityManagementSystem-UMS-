@@ -1,0 +1,72 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: ApiGateway
+
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+
+            - id: DepartmentService
+              uri: lb://DepartmentService
+              predicates:
+                - Path=/departments/**
+
+            - id: AdminService
+              uri: lb://AdminService
+              predicates:
+                - Path=/admins/**
+
+            - id: RoleService
+              uri: lb://RoleService
+              predicates:
+                - Path=/api/roles/**
+
+            - id: StudentService
+              uri: lb://StudentService
+              predicates:
+                - Path=/students/**
+
+            - id: TeacherService
+              uri: lb://TeacherService
+              predicates:
+                - Path=/teachers/**
+
+            - id: CourseService
+              uri: lb://CourseService
+              predicates:
+                - Path=/courses/**
+
+            - id: EnrollmentService
+              uri: lb://EnrollmentService
+              predicates:
+                - Path=/enrollments/**
+
+            - id: AttendanceService
+              uri: lb://AttendanceService
+              predicates:
+                - Path=/attendance/**
+
+            - id: TimetableService
+              uri: lb://TimetableService
+              predicates:
+                - Path=/api/timetables/**
+
+            - id: ExaminationService
+              uri: lb://ExaminationService
+              predicates:
+                - Path=/exams/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    hostname: localhost

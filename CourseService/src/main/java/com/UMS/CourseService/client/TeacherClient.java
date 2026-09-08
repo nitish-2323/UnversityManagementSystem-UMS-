@@ -23,12 +23,6 @@ public class TeacherClient {
 
     public TeacherResponseDTO teacherServiceFallback(
             Long teacherId, Exception ex) {
-        System.out.println("========== TEACHER SERVICE ERROR ==========");
-        System.out.println("Teacher ID: " + teacherId);
-        System.out.println("Exception: " + ex.getClass().getName());
-        System.out.println("Message: " + ex.getMessage());
-        ex.printStackTrace();
-        System.out.println("============================================");
 
         TeacherResponseDTO response = new TeacherResponseDTO();
 
